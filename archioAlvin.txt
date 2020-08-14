@@ -311,5 +311,6 @@ print("pronostico y2:")
 print(pronoyt2)
 print("")
 print("pronostico y3:")
-print(pronoyt3)
+print(pronoyt3
+print("hola mundo)
 print("Buenos dias señor sol")
