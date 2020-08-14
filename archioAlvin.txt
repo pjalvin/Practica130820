@@ -1,4 +1,4 @@
-import math
+import math321
 def matriztran(matriz):
     matrizT=[]
     for i in range(0,len(matriz[0])):
@@ -312,3 +312,4 @@ print(pronoyt2)
 print("")
 print("pronostico y3:")
 print(pronoyt3)
+print("Buenos dias señor sol")
