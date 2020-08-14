@@ -1,0 +1,183 @@
+# -*- coding: utf-8 -*-
+
+# Form implementation generated from reading ui file 'LogInAll.ui'
+#
+# Created by: PyQt5 UI code generator 5.13.2
+#
+# WARNING! All changes made in this file will be lost!
+
+from PyQt5 import QtCore, QtGui, QtWidgets
+from usuario import usuarioclass
+from functools import partial
+from inventarios import Ui_MainWindow2
+from error import Ui_error
+from administracion import Ui_AGB_administracion
+from comercial import Ui_AGB_Comercial
+class Ui_MainWindow(object):
+    def setupUi(self, MainWindow):
+        MainWindow.setObjectName("MainWindow")
+        MainWindow.resize(1113, 690)
+        MainWindow.setStyleSheet("background-color: rgb(255, 255, 255);\n"
+"font: italic 8pt \"SansSerif\";\n"
+"QLineEdit\n"
+"{\n"
+"  border: rgb(0, 89, 169);\n"
+"  border-bottom-right-radius: 30px;\n"
+"  border-top-left-radius:30px;\n"
+"}\n"
+"QPushButton\n"
+"{\n"
+"  border-bottom-right-radius: 30px;\n"
+"  border-top-left-radius:30px;\n"
+"}\n"
+"QPushButton:hover\n"
+"{\n"
+"  background:rgb(243, 243, 243);\n"
+"  color:rgb(0, 89, 169);\n"
+"}")
+        MainWindow.setTabShape(QtWidgets.QTabWidget.Rounded)
+        self.PantallaInicio = QtWidgets.QWidget(MainWindow)
+        self.PantallaInicio.setObjectName("PantallaInicio")
+        self.usuario = QtWidgets.QLabel(self.PantallaInicio)
+        self.usuario.setGeometry(QtCore.QRect(430, 330, 111, 41))
+        self.usuario.setObjectName("usuario")
+        self.contrasena = QtWidgets.QLabel(self.PantallaInicio)
+        self.contrasena.setGeometry(QtCore.QRect(430, 400, 161, 41))
+        self.contrasena.setObjectName("contrasena")
+        self.contbox = QtWidgets.QLineEdit(self.PantallaInicio)
+        self.contbox.setGeometry(QtCore.QRect(420, 440, 291, 31))
+        self.contbox.setStyleSheet("background-color: rgb(255, 255, 255);\n"
+"font: 75 12pt \"Century Gothic\";\n"
+"border-color:rgb(0, 89, 169);\n"
+"   border-width: 2px;\n"
+"   border-style: solid;\n"
+"color: rgb(0, 89, 169);\n"
+"border-bottom-right-radius:20px;\n"
+"border-top-left-radius:20px;\n"
+"")
+        self.contbox.setText("")
+        self.contbox.setEchoMode(QtWidgets.QLineEdit.Password)
+        self.contbox.setObjectName("contbox")
+        self.usuariobox = QtWidgets.QLineEdit(self.PantallaInicio)
+        self.usuariobox.setGeometry(QtCore.QRect(420, 370, 291, 31))
+        self.usuariobox.setStyleSheet("background-color: rgb(255, 255, 255);\n"
+"font: 75 12pt \"Century Gothic\";\n"
+"border-color:rgb(0, 89, 169);\n"
+"   border-width: 2px;\n"
+"   border-style: solid;\n"
+"color: rgb(0, 89, 169);\n"
+"border-bottom-right-radius:20px;\n"
+"border-top-left-radius:20px;\n"
+"")
+        self.usuariobox.setText("")
+        self.usuariobox.setObjectName("usuariobox")
+        self.botonlogin = QtWidgets.QPushButton(self.PantallaInicio)
+        self.botonlogin.setGeometry(QtCore.QRect(510, 500, 121, 31))
+        self.botonlogin.setStyleSheet("background-color: rgb(0, 89, 169);\n"
+"font: italic 14pt \"SansSerif\";\n"
+"color: rgb(255, 255, 255);\n"
+"border-bottom-right-radius:20px;\n"
+"border-top-left-radius:20px;\n"
+"\n"
+"\n"
+"")
+        self.botonlogin.setObjectName("botonlogin")
+        self.botonlogin.clicked.connect(partial(self.verificar,MainWindow=MainWindow))
+        self.logoagb = QtWidgets.QLabel(self.PantallaInicio)
+        self.logoagb.setGeometry(QtCore.QRect(410, 70, 301, 181))
+        self.logoagb.setStyleSheet("border-image: url(:/cct/Logo Sin Fondo.png);")
+        self.logoagb.setText("")
+        self.logoagb.setObjectName("logoagb")
+        self.globologo = QtWidgets.QLabel(self.PantallaInicio)
+        self.globologo.setGeometry(QtCore.QRect(820, -10, 301, 661))
+        self.globologo.setStyleSheet("border-image: url(:/cct/Marca De Agua Globo.png);")
+        self.globologo.setText("")
+        self.globologo.setObjectName("globologo")
+        MainWindow.setCentralWidget(self.PantallaInicio)
+        self.menubar = QtWidgets.QMenuBar(MainWindow)
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 1113, 18))
+        self.menubar.setObjectName("menubar")
+        MainWindow.setMenuBar(self.menubar)
+        self.statusbar = QtWidgets.QStatusBar(MainWindow)
+        self.statusbar.setObjectName("statusbar")
+        MainWindow.setStatusBar(self.statusbar)
+        self.cont=int(0)
+        self.retranslateUi(MainWindow)
+        QtCore.QMetaObject.connectSlotsByName(MainWindow)  
+
+    def retranslateUi(self, MainWindow):
+        _translate = QtCore.QCoreApplication.translate
+        MainWindow.setWindowTitle(_translate("MainWindow", "AGB"))
+        self.icon=QtGui.QPixmap('C:/Users/hp/Desktop/sis 1/AGB PROYECTO FINAL/imagenes/Logo Sin Fondo.png')
+        self.icono=QtGui.QIcon(self.icon)
+        MainWindow.setWindowIcon(self.icono)
+        self.usuario.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:20pt; color:#0059a9;\">Usuario:</span></p></body></html>"))
+        self.contrasena.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:20pt; color:#0059a9;\">Contraseña:</span></p></body></html>"))
+        self.botonlogin.setText(_translate("MainWindow", "Aceptar"))
+
+        
+
+    def verificar(self,MainWindow):
+        user=self.usuariobox.text()
+        pas=self.contbox.text()
+        usuario=usuarioclass(user ,pas)
+        x=usuario.validar()
+        if(self.cont<3):
+                if(x==1):
+                        self.abriri()
+                        MainWindow.close()
+                else:
+                        if(x==2):
+                                self.abrira()
+                                MainWindow.close()
+                        else:
+                                if(x==3):
+                                        self.abrirc()
+                                        MainWindow.close()
+                                else:
+                                        self.llamarerror()
+                                        self.cont+=1
+        else:
+                self.llamarerror2()
+                MainWindow.close()
+
+    def abriri(self):
+         self.ventana=QtWidgets.QMainWindow()
+         self.ui=Ui_MainWindow2()
+         self.ui.setupUi(self.ventana)
+         self.ventana.show()
+    def abrira(self):
+         self.ventana=QtWidgets.QMainWindow()
+         self.ui=Ui_AGB_administracion()
+         self.ui.setupUi(self.ventana)
+         self.ventana.show()
+    def abrirc(self):
+         self.ventana=QtWidgets.QMainWindow()
+         self.ui=Ui_AGB_Comercial()
+         self.ui.setupUi(self.ventana)
+         self.ventana.show()
+    def llamarerror(self):
+         self.ventana=QtWidgets.QDialog()
+         self.ui=Ui_error()
+         self.ui.setupUi(self.ventana,"Acceso Denegado")
+         self.ventana.exec_()
+    def llamarerror2(self):
+         self.ventana=QtWidgets.QDialog()
+         self.ui=Ui_error()
+         self.ui.setupUi(self.ventana,"Limite de Intentos")
+         self.ventana.exec_()    
+
+
+import sys
+sys.path.append('C:/Users/hp/Desktop/sis 1/AGB PROYECTO FINAL/imagenes')
+
+
+
+if __name__ == "__main__":
+    import sys
+    app = QtWidgets.QApplication(sys.argv)
+    MainWindow = QtWidgets.QMainWindow()
+    ui = Ui_MainWindow()
+    ui.setupUi(MainWindow)
+    MainWindow.show()
+    sys.exit(app.exec_())
