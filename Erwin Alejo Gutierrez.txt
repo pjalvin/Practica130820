@@ -3,7 +3,7 @@
 using namespace std;
 int main(){
     int n;
-    cout<<"Ingresar la Cantidad de coordenadas"<<endl;
+    cout<<"Ingresar la Cantidad de Personas"<<endl;
     cin>>n;
     double x[n]={0},y[n]={0};
     for(int i=0;i<n;i++){
@@ -24,3 +24,4 @@ int main(){
     cout << "El resultado es: " <<total<< "\n";
     return 0;
 }
+//Codigo
