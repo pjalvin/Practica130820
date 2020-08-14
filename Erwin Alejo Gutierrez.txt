@@ -3,7 +3,8 @@
 using namespace std;
 int main(){
     int n;
-    cout<<"Ingresar la Cantidad de coordenadas"<<endl;
+    cout<<"Ingresar"<<endl;
+	cout<<"Coordenadas"<<endl;
     cin>>n;
     double x[n]={0},y[n]={0};
     for(int i=0;i<n;i++){
