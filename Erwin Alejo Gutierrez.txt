@@ -1,1 +1,26 @@
-Creando mi archivo por primera ves
+#include <iostream>
+#include <cstdlib>
+using namespace std;
+int main(){
+    int n;
+    cout<<"Ingresar la Cantidad de coordenadas"<<endl;
+    cin>>n;
+    double x[n]={0},y[n]={0};
+    for(int i=0;i<n;i++){
+        cout<<"Ingresar x"<<(i+1)<<" ";
+        cin>>x[i];
+        cout<<"Ingresar y"<<(i+1)<<" ";
+        cin>>y[i];
+    }
+    double x1=0,y1=0,xy=0;
+    for(int i=0;i<n;i++){
+        x1=x1+x[i];
+        y1=y1+y[i];
+        for(int j=0;j<n;j++){
+            xy=xy+x[i]*y[j];
+        }
+    }
+    double total=(x1*y1)/xy;
+    cout << "El resultado es: " <<total<< "\n";
+    return 0;
+}
